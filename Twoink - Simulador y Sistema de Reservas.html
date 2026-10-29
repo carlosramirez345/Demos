@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoink | Sublimación, DTF e Impresión UV en Puebla</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter (Editorial Heavy & Italic) + Space Mono for codes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        twoink: {
+                            black: '#111111',
+                            dark: '#0D0D0D',
+                            magenta: '#D81B60',
+                            magentaHover: '#AD1457',
+                            grayBg: '#F9FAFB',
+                            border: '#EAEAEA',
+                            muted: '#6B7280'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #111111;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Editorial Section Tag */
+        .editorial-tag {
+            font-size: 10px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #71717A;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Editorial Accent Italic */
+        .editorial-italic {
+            font-style: italic;
+            color: #D81B60;
+            font-weight: 800;
+        }
+
+        /* Sharp Rectangular Buttons */
+        .btn-editorial-primary {
+            background-color: #111111;
+            color: #FFFFFF;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.85rem 1.5rem;
+            border: 1px solid #111111;
+            border-radius: 0px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-editorial-primary:hover {
+            background-color: #D81B60;
+            border-color: #D81B60;
+            color: #FFFFFF;
+        }
+
+        .btn-editorial-outline {
+            background-color: #FFFFFF;
+            color: #111111;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.25rem;
+            border: 1px solid #27272A;
+            border-radius: 0px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .btn-editorial-outline:hover {
+            background-color: #111111;
+            color: #FFFFFF;
+        }
+
+        /* Custom Range Input Editorial Style */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: #E4E4E7;
+            height: 4px;
+            border-radius: 0px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            background: #D81B60;
+            cursor: pointer;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Print Zone Hover & Active States */
+        .print-zone-box {
+            border: 1.5px dashed rgba(216, 27, 96, 0.45);
+            transition: all 0.2s ease;
+        }
+        .print-zone-box:hover, .print-zone-box.dragging {
+            border-color: #D81B60;
+            background-color: rgba(216, 27, 96, 0.04);
+        }
+
+        /* DTF Transparent Grid Pattern */
+        .dtf-grid-bg {
+            background-image: 
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- DEMO TOP BAR FOR PRESENTATION -->
+    <div class="bg-twoink-dark text-white px-4 py-2 text-[11px] border-b border-neutral-800">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-twoink-magenta animate-ping"></span>
+                <span class="uppercase tracking-widest font-semibold text-neutral-300">DEMO INTERACTIVO TWOINK PUEBLA:</span>
+                <span class="hidden sm:inline text-neutral-400">Simulador en vivo + Reserva con Código Único + Correo Cliente/Taller</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="switchMainView('client')" id="top-client-switch" class="underline font-bold text-white">Vista Cliente</button>
+                <span class="text-neutral-600">|</span>
+                <button onclick="switchMainView('admin')" id="top-admin-switch" class="text-neutral-400 hover:text-white transition">
+                    Panel Taller Twoink (<span id="top-admin-count">2</span>)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER EXACTO AL ESTILO TWOINK -->
+    <header class="bg-white border-b border-twoink-border sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <!-- Left: Black Square Logo Twoink -->
+            <a href="#" onclick="switchMainView('client')" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-twoink-black flex flex-col items-center justify-center text-white select-none transition group-hover:bg-twoink-magenta">
+                    <span class="text-sm font-black leading-none tracking-tighter">2<span class="text-twoink-magenta group-hover:text-white">.</span></span>
+                    <span class="text-[7px] font-bold tracking-widest uppercase mt-0.5">TWOINK</span>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="font-extrabold text-sm tracking-tight block leading-none">TWOINK</span>
+                    <span class="text-[9px] tracking-[0.18em] text-neutral-400 uppercase font-semibold">Puebla • México</span>
+                </div>
+            </a>
+
+            <!-- Center Navigation Links (Client View) -->
+            <nav id="client-nav-links" class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-neutral-600">
+                <a href="#catalogo-lienzo" class="hover:text-twoink-magenta transition">Catálogo</a>
+                <a href="#simulador-section" class="hover:text-twoink-magenta transition flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 bg-twoink-magenta rounded-full"></span> Simulador 2D
+                </a>
+                <a href="#reserva-section" class="hover:text-twoink-magenta transition">Reservar Pedido</a>
+                <a href="#faq-section" class="hover:text-twoink-magenta transition">Dudas</a>
+            </nav>
+
+            <!-- Right: Mode Toggle & Menu Icon -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button onclick="switchMainView('client')" id="header-btn-client" class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-twoink-black bg-twoink-black text-white transition">
+                    Tienda / Simulador
+                </button>
+                <button onclick="switchMainView('admin')" id="header-btn-admin" class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-neutral-300 bg-white text-twoink-black hover:border-twoink-black transition flex items-center gap-1.5">
+                    <span>Recepción Taller</span>
+                    <span id="badge-orders-count" class="bg-twoink-magenta text-white px-1.5 py-0.2 text-[9px] font-mono">2</span>
+                </button>
+                <button onclick="document.getElementById('simulador-section').scrollIntoView({behavior:'smooth'})" class="p-2 text-twoink-black hover:text-twoink-magenta md:hidden" title="Ir al Simulador">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- MAIN VIEW 1: CLIENT WEBSITE + SIMULATOR + RESERVATION     -->
+    <!-- ========================================================= -->
+    <div id="view-client" class="flex-grow">
+
+        <!-- HERO SECTION (Basado en Captura 2) -->
+        <section class="py-12 sm:py-20 px-4 sm:px-6 border-b border-twoink-border bg-white">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="editorial-tag">SUBLIMACIÓN / DTF / UV</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.06] text-twoink-black">
+                        Playeras, tazas y productos que <span class="editorial-italic">destacan tu marca.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed max-w-xl">
+                        Sublimación, DTF e impresión UV de la más alta calidad para empresas, marcas, emprendedores y eventos en Puebla. Prueba tu diseño en nuestro simulador en línea y paga al recoger.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#simulador-section" class="btn-editorial-primary">
+                            <span>DISEÑAR EN SIMULADOR</span>
+                            <span>↗</span>
+                        </a>
+                        <a href="#catalogo-lienzo" class="btn-editorial-outline">
+                            <span>VER PRODUCTOS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Feature Preview Card -->
+                <div class="lg:col-span-5">
+                    <div class="border border-twoink-border bg-twoink-grayBg p-6 relative">
+                        <div class="flex items-center justify-between border-b border-neutral-200 pb-3 mb-4">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500">NUEVO SISTEMA INTERACTIVO</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-twoink-magenta">PAGO EN TIENDA</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-7 h-7 bg-twoink-black text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">01</div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-twoink-black">Personaliza tu lienzo en vivo</h3>
+                                    <p class="text-xs text-neutral-500 mt-0.5">Sube tu diseño o logotipo, ajústalo sobre la taza, playera, gorra o metro DTF.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-7 h-7 bg-twoink-black text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">02</div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-twoink-black">Recibe tu código único por correo</h3>
+                                    <p class="text-xs text-neutral-500 mt-0.5">Enviamos confirmación automática a tu correo y a nuestro taller con tu clave <span class="font-mono font-bold text-twoink-black">TWK-XXXX</span>.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-7 h-7 bg-twoink-magenta text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">03</div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-twoink-black">Liquida al recoger tu pedido</h3>
+                                    <p class="text-xs text-neutral-500 mt-0.5">Sin tarjetas en línea. Presenta tu código único en sucursal Puebla para pagar y recoger.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS BAR (Exacto a Captura 2) -->
+        <section class="border-b border-twoink-border bg-white py-8 px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 divide-x divide-neutral-200">
+                <div class="pl-2 sm:pl-4">
+                    <div class="text-2xl sm:text-3xl font-black text-twoink-black">+1000</div>
+                    <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-neutral-500 mt-1">PROYECTOS</div>
+                </div>
+                <div class="pl-4 sm:pl-8">
+                    <div class="text-2xl sm:text-3xl font-black text-twoink-black">+500</div>
+                    <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-neutral-500 mt-1">CLIENTES</div>
+                </div>
+                <div class="pl-4 sm:pl-8">
+                    <div class="text-2xl sm:text-3xl font-black text-twoink-black">+3</div>
+                    <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-neutral-500 mt-1">AÑOS EXP.</div>
+                </div>
+                <div class="pl-4 sm:pl-8">
+                    <div class="text-2xl sm:text-3xl font-black text-twoink-black">100%</div>
+                    <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-neutral-500 mt-1">CALIDAD</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO DE PRODUCTOS: "Elige tu próximo lienzo." (Exacto a Captura 1) -->
+        <section id="catalogo-lienzo" class="py-14 sm:py-20 px-4 sm:px-6 border-b border-twoink-border bg-white">
+            <div class="max-w-6xl mx-auto">
+                <span class="editorial-tag">01 — CATÁLOGO DE PRODUCTOS</span>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-twoink-black mb-10">
+                    Elige tu <span class="editorial-italic">próximo lienzo.</span>
+                </h2>
+
+                <!-- 3 Pricing Cards from Screenshot 1 + 2 Additional Workshop Products -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1: Taza Blanca 11oz ($80 MXN) -->
+                    <div class="border border-twoink-border bg-white p-6 sm:p-8 flex flex-col justify-between hover:border-neutral-400 transition">
+                        <div>
+                            <div class="text-center pb-6 border-b border-neutral-100">
+                                <h3 class="text-xl font-extrabold text-twoink-black leading-snug">Taza<br>Blanca<br>11oz</h3>
+                                <div class="mt-4">
+                                    <span class="text-3xl sm:text-4xl font-black text-twoink-magenta">$80</span>
+                                    <span class="block text-sm font-extrabold text-neutral-500 mt-0.5">MXN</span>
+                                </div>
+                            </div>
+                            <ul class="py-6 space-y-4 text-sm text-neutral-600 divide-y divide-neutral-100">
+                                <li class="pt-2">Cerámica de alta calidad</li>
+                                <li class="pt-4">Resistente al microondas</li>
+                                <li class="pt-4">Impresión a todo color</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectProductAndScroll('taza')" class="btn-editorial-outline w-full mt-4">
+                            <span>LO QUIERO</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+
+                    <!-- Card 2: Playera Tacto Algodón ($150 MXN) -->
+                    <div class="border border-twoink-border bg-white p-6 sm:p-8 flex flex-col justify-between hover:border-neutral-400 transition">
+                        <div>
+                            <div class="text-center pb-6 border-b border-neutral-100">
+                                <h3 class="text-xl font-extrabold text-twoink-black leading-snug">Playera<br>(Tacto<br>Algodón)</h3>
+                                <div class="mt-4">
+                                    <span class="text-3xl sm:text-4xl font-black text-twoink-magenta">$150</span>
+                                    <span class="block text-sm font-extrabold text-neutral-500 mt-0.5">MXN</span>
+                                </div>
+                            </div>
+                            <ul class="py-6 space-y-4 text-sm text-neutral-600 divide-y divide-neutral-100">
+                                <li class="pt-2">Tela suave tacto algodón</li>
+                                <li class="pt-4">Tallas CH, M, G, XG</li>
+                                <li class="pt-4">Sublimación tamaño A4 / DTF</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectProductAndScroll('playera')" class="btn-editorial-outline w-full mt-4">
+                            <span>LO QUIERO</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+
+                    <!-- Card 3: Metro DTF ($250 MXN) -->
+                    <div class="border border-twoink-border bg-white p-6 sm:p-8 flex flex-col justify-between hover:border-neutral-400 transition">
+                        <div>
+                            <div class="text-center pb-6 border-b border-neutral-100">
+                                <h3 class="text-xl font-extrabold text-twoink-black leading-snug">Metro<br>DTF<br><span class="text-xs font-normal text-neutral-400">(58 cm)</span></h3>
+                                <div class="mt-4">
+                                    <span class="text-3xl sm:text-4xl font-black text-twoink-magenta">$250</span>
+                                    <span class="block text-sm font-extrabold text-neutral-500 mt-0.5">MXN</span>
+                                </div>
+                            </div>
+                            <ul class="py-6 space-y-4 text-sm text-neutral-600 divide-y divide-neutral-100">
+                                <li class="pt-2">Ancho de 58 cm</li>
+                                <li class="pt-4">Colores vivos y blanco opaco</li>
+                                <li class="pt-4">Listo para planchar</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectProductAndScroll('dtf')" class="btn-editorial-outline w-full mt-4">
+                            <span>LO QUIERO</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Secondary Row: Termos & Gorras (From Screenshot 3 "Nuestros productos.") -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                    <div class="border border-twoink-border p-6 flex items-center justify-between bg-twoink-grayBg">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">SUBLIMACIÓN / UV</span>
+                            <h4 class="text-lg font-extrabold text-twoink-black">Termos Acero Inox 20oz</h4>
+                            <p class="text-sm font-extrabold text-twoink-magenta mt-0.5">$180 MXN</p>
+                        </div>
+                        <button onclick="selectProductAndScroll('termo')" class="btn-editorial-outline">
+                            <span>DISEÑAR</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+                    <div class="border border-twoink-border p-6 flex items-center justify-between bg-twoink-grayBg">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">DTF / PARCHES</span>
+                            <h4 class="text-lg font-extrabold text-twoink-black">Gorras Personalizadas</h4>
+                            <p class="text-sm font-extrabold text-twoink-magenta mt-0.5">$120 MXN</p>
+                        </div>
+                        <button onclick="selectProductAndScroll('gorra')" class="btn-editorial-outline">
+                            <span>DISEÑAR</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SECCIÓN 02: SIMULADOR VISUAL + RESERVA CON CÓDIGO ÚNICO    -->
+        <!-- ========================================================= -->
+        <section id="simulador-section" class="py-14 sm:py-20 px-4 sm:px-6 bg-twoink-grayBg border-b border-twoink-border">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="editorial-tag">02 — SIMULADOR INTERACTIVO & RESERVA</span>
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-twoink-black">
+                            Personaliza y reserva <span class="editorial-italic">tu pedido.</span>
+                        </h2>
+                    </div>
+                    <p class="text-xs sm:text-sm text-neutral-500 max-w-md">
+                        Coloca tu diseño sobre el producto para previsualizar cómo quedará. Al terminar, genera tu <strong>código único</strong> para pagar al recoger en tienda.
+                    </p>
+                </div>
+
+                <!-- SIMULATOR + RESERVATION GRID -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- LEFT 7 COLS: THE VISUAL SIMULATOR -->
+                    <div class="lg:col-span-7 bg-white border border-twoink-border p-5 sm:p-7 space-y-6">
+                        
+                        <!-- 1. Product Tabs Selector -->
+                        <div>
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block mb-2.5">
+                                PASO 1 — SELECCIONA EL LIENZO
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="simulator-product-tabs">
+                                <!-- Injected via JS -->
+                            </div>
+                        </div>
+
+                        <!-- 2. Color & Technique Bar -->
+                        <div class="flex flex-wrap items-center justify-between gap-4 py-3 px-4 bg-twoink-grayBg border border-twoink-border">
+                            <div class="flex items-center gap-3" id="color-picker-container">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-neutral-600">Color del Producto:</span>
+                                <div class="flex items-center gap-2" id="color-swatches-list">
+                                    <button type="button" onclick="changeProductColor('#FFFFFF', 'Blanco')" title="Blanco" class="w-6 h-6 bg-white border-2 border-twoink-magenta scale-110 transition"></button>
+                                    <button type="button" onclick="changeProductColor('#18181B', 'Negro')" title="Negro" class="w-6 h-6 bg-zinc-900 border border-neutral-300 hover:scale-110 transition"></button>
+                                    <button type="button" onclick="changeProductColor('#D81B60', 'Rosa Twoink')" title="Rosa Twoink" class="w-6 h-6 bg-[#D81B60] border border-neutral-300 hover:scale-110 transition"></button>
+                                    <button type="button" onclick="changeProductColor('#1E3A8A', 'Azul Marino')" title="Azul Marino" class="w-6 h-6 bg-blue-900 border border-neutral-300 hover:scale-110 transition"></button>
+                                    <button type="button" onclick="changeProductColor('#E4E4E7', 'Gris Plata')" title="Gris Plata" class="w-6 h-6 bg-zinc-200 border border-neutral-300 hover:scale-110 transition"></button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span id="sim-technique-badge" class="text-[10px] font-bold uppercase tracking-widest bg-white border border-neutral-300 px-2.5 py-1 text-twoink-black">
+                                    TÉCNICA: SUBLIMACIÓN
+                                </span>
+                                <button type="button" onclick="resetDesignPosition()" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 border border-neutral-300 bg-white hover:bg-twoink-black hover:text-white transition" title="Centrar diseño">
+                                    <i class="fa-solid fa-crosshairs mr-1"></i>Centrar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3. INTERACTIVE MOCKUP CANVAS -->
+                        <div id="canvas-stage" class="relative w-full h-[380px] sm:h-[430px] bg-twoink-grayBg border border-twoink-border flex items-center justify-center overflow-hidden select-none">
+                            
+                            <!-- Subtle Technical Rulers -->
+                            <div class="absolute top-3 left-3 text-[10px] font-mono text-neutral-400 pointer-events-none">
+                                <span id="canvas-product-label">LIENZO: TAZA BLANCA 11OZ</span>
+                            </div>
+                            <div class="absolute top-3 right-3 text-[10px] font-mono font-bold text-twoink-magenta pointer-events-none">
+                                <span id="canvas-price-tag">$80 MXN</span>
+                            </div>
+
+                            <!-- Base Product SVG Mockup Wrapper -->
+                            <div id="product-svg-stage" class="w-[310px] h-[310px] sm:w-[370px] sm:h-[370px] flex items-center justify-center pointer-events-none">
+                                <!-- Clean Vector Mockup injected via JS -->
+                            </div>
+
+                            <!-- Printable Bounding Area (Clips & Holds User's Design) -->
+                            <div id="print-zone" class="print-zone-box absolute overflow-hidden flex items-center justify-center" style="width: 135px; height: 150px; top: 52%; left: 46%; transform: translate(-50%, -50%);">
+                                
+                                <!-- Draggable User Graphic + Text -->
+                                <div id="draggable-layer" class="cursor-move touch-none flex flex-col items-center justify-center origin-center" style="transform: translate(0px, 0px) scale(1) rotate(0deg);">
+                                    <!-- Uploaded Image -->
+                                    <img id="user-img-preview" src="" alt="Tu Diseño" class="max-w-[115px] max-h-[115px] object-contain pointer-events-none hidden" />
+                                    <!-- Pre-made SVG Sticker -->
+                                    <div id="user-svg-preview" class="w-24 h-24 flex items-center justify-center pointer-events-none"></div>
+                                    <!-- Optional Custom Text -->
+                                    <div id="user-text-preview" class="text-center font-black leading-none tracking-tight pointer-events-none px-1 whitespace-nowrap mt-1" style="font-size: 16px; color: #111111;"></div>
+                                </div>
+
+                                <!-- Corner Tag -->
+                                <span class="absolute bottom-0.5 right-1 text-[8px] font-mono uppercase tracking-wider text-twoink-magenta/70 pointer-events-none">Área Impresión</span>
+                            </div>
+
+                            <!-- Bottom Helper Bar -->
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-neutral-500 bg-white/90 backdrop-blur-sm border border-twoink-border px-3 py-1.5 pointer-events-none">
+                                <span><i class="fa-solid fa-arrows-up-down-left-right text-twoink-magenta mr-1.5"></i>Arrastra tu diseño con el mouse o dedo para acomodarlo</span>
+                                <span class="font-mono text-[10px] hidden sm:inline" id="transform-readout">Escala: 100% | Giro: 0°</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Size & Rotation Sliders -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                            <div class="border border-twoink-border p-3 bg-twoink-grayBg">
+                                <div class="flex justify-between text-xs font-bold mb-1.5">
+                                    <span class="uppercase tracking-wider text-[10px] text-neutral-500">Tamaño del Diseño</span>
+                                    <span id="scale-label" class="font-mono text-twoink-black">100%</span>
+                                </div>
+                                <input type="range" id="slider-scale" min="40" max="190" value="100" class="w-full" oninput="handleTransformSliders()">
+                            </div>
+                            <div class="border border-twoink-border p-3 bg-twoink-grayBg">
+                                <div class="flex justify-between text-xs font-bold mb-1.5">
+                                    <span class="uppercase tracking-wider text-[10px] text-neutral-500">Rotación / Ángulo</span>
+                                    <span id="rotate-label" class="font-mono text-twoink-black">0°</span>
+                                </div>
+                                <input type="range" id="slider-rotate" min="-180" max="180" value="0" class="w-full" oninput="handleTransformSliders()">
+                            </div>
+                        </div>
+
+                        <!-- 5. Upload File + Pre-made Demo Designs + Custom Text -->
+                        <div class="border-t border-twoink-border pt-6 space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                
+                                <!-- Upload Image or Choose Demo Graphic -->
+                                <div class="space-y-3">
+                                    <label class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block">
+                                        PASO 2 — SUBE TU ARCHIVO O ELIGE UN GRÁFICO DEMO
+                                    </label>
+                                    
+                                    <!-- Upload Box -->
+                                    <label class="flex items-center justify-center w-full p-3.5 border border-dashed border-neutral-400 bg-twoink-grayBg hover:border-twoink-magenta cursor-pointer transition group">
+                                        <div class="flex items-center gap-2.5 text-xs font-semibold text-twoink-black group-hover:text-twoink-magenta">
+                                            <i class="fa-solid fa-upload text-sm"></i>
+                                            <span id="uploaded-file-label" class="truncate max-w-[210px]">Subir imagen propia (PNG, JPG)...</span>
+                                        </div>
+                                        <input type="file" id="design-file-input" accept="image/*" class="hidden" onchange="handleUserImageUpload(event)">
+                                    </label>
+
+                                    <!-- 4 Demo Stickers for Quick Client Demo -->
+                                    <div>
+                                        <span class="text-[10px] font-semibold text-neutral-500 block mb-1.5">Gráficos de prueba (1 clic para demostración):</span>
+                                        <div class="grid grid-cols-4 gap-1.5">
+                                            <button type="button" onclick="applyDemoSticker('brand')" class="p-2 border border-twoink-border bg-white hover:border-twoink-black text-center transition">
+                                                <i class="fa-solid fa-bolt text-twoink-magenta text-sm block mb-0.5"></i>
+                                                <span class="text-[9px] font-bold uppercase block">Marca</span>
+                                            </button>
+                                            <button type="button" onclick="applyDemoSticker('puebla')" class="p-2 border border-twoink-border bg-white hover:border-twoink-black text-center transition">
+                                                <i class="fa-solid fa-compass-drafting text-twoink-black text-sm block mb-0.5"></i>
+                                                <span class="text-[9px] font-bold uppercase block">Estudio</span>
+                                            </button>
+                                            <button type="button" onclick="applyDemoSticker('coffee')" class="p-2 border border-twoink-border bg-white hover:border-twoink-black text-center transition">
+                                                <i class="fa-solid fa-mug-hot text-amber-700 text-sm block mb-0.5"></i>
+                                                <span class="text-[9px] font-bold uppercase block">Cafetería</span>
+                                            </button>
+                                            <button type="button" onclick="applyDemoSticker('event')" class="p-2 border border-twoink-border bg-white hover:border-twoink-black text-center transition">
+                                                <i class="fa-solid fa-crown text-twoink-magenta text-sm block mb-0.5"></i>
+                                                <span class="text-[9px] font-bold uppercase block">Evento</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Add Custom Text -->
+                                <div class="space-y-3">
+                                    <label class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block">
+                                        TEXTO O NOMBRE PERSONALIZADO (OPCIONAL)
+                                    </label>
+                                    <input type="text" id="input-custom-text" value="TWOINK STUDIO" placeholder="Escribe un texto o nombre..." oninput="syncCustomText()" class="w-full border border-neutral-300 bg-white px-3 py-2 text-xs font-semibold text-twoink-black focus:outline-none focus:border-twoink-black">
+                                    
+                                    <div class="flex items-center justify-between gap-2 pt-1">
+                                        <select id="select-custom-font" onchange="syncCustomText()" class="border border-neutral-300 bg-white px-2.5 py-1.5 text-xs font-medium text-twoink-black focus:outline-none flex-grow">
+                                            <option value="'Inter', sans-serif">Sans Editorial Bold</option>
+                                            <option value="'Playfair Display', serif">Serif Elegante</option>
+                                            <option value="'Bebas Neue', sans-serif">Impacto Condensada</option>
+                                        </select>
+
+                                        <div class="flex items-center gap-1.5 border border-neutral-200 px-2 py-1 bg-twoink-grayBg">
+                                            <button type="button" onclick="changeTextColor('#111111')" class="w-4 h-4 bg-[#111111] border border-neutral-400" title="Texto Negro"></button>
+                                            <button type="button" onclick="changeTextColor('#D81B60')" class="w-4 h-4 bg-[#D81B60] border border-neutral-400" title="Texto Magenta"></button>
+                                            <button type="button" onclick="changeTextColor('#FFFFFF')" class="w-4 h-4 bg-white border border-neutral-400" title="Texto Blanco"></button>
+                                            <button type="button" onclick="changeTextColor('#D97706')" class="w-4 h-4 bg-amber-600 border border-neutral-400" title="Texto Dorado"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT 5 COLS: RESERVATION & UNIQUE PICKUP CODE FORM -->
+                    <div id="reserva-section" class="lg:col-span-5 bg-white border border-twoink-border p-6 sm:p-8 sticky top-20">
+                        <span class="editorial-tag">03 — RESERVA Y PAGO EN SUCURSAL</span>
+                        <h3 class="text-2xl font-black tracking-tight text-twoink-black mb-2">
+                            Reserva tu <span class="editorial-italic">producto.</span>
+                        </h3>
+                        <p class="text-xs text-neutral-500 mb-6">
+                            Genera tu orden sin pagos en línea. Enviaremos un correo a tu bandeja y al taller de <strong>Twoink</strong> con tu <strong>Código Único</strong> para liquidar al recoger.
+                        </p>
+
+                        <!-- Selected Item Live Summary Box -->
+                        <div class="bg-twoink-grayBg border border-twoink-border p-4 mb-5 flex items-center justify-between">
+                            <div>
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-neutral-400 block">LIENZO CONFIGURADO</span>
+                                <h4 id="summary-name" class="font-extrabold text-sm text-twoink-black">Taza Blanca 11oz</h4>
+                                <span id="summary-specs" class="text-[11px] text-neutral-500">Color: Blanco • Sublimación</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-neutral-400 block">TOTAL ESTIMADO</span>
+                                <div id="summary-total" class="text-2xl font-black text-twoink-magenta">$80 MXN</div>
+                                <span id="summary-unit" class="text-[10px] font-semibold text-neutral-400">$80 MXN c/u</span>
+                            </div>
+                        </div>
+
+                        <!-- Form matching Screenshot 3 "Cotiza tu idea." style -->
+                        <form id="reservation-form" onsubmit="handleOrderSubmit(event)" class="space-y-3.5">
+                            
+                            <!-- Quantity & Size Row -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label id="qty-field-label" class="block text-[10px] font-bold uppercase tracking-wider text-neutral-600 mb-1">Cantidad (Piezas)</label>
+                                    <div class="flex items-center border border-neutral-300 bg-white">
+                                        <button type="button" onclick="changeQuantity(-1)" class="px-3 py-2 text-xs font-bold hover:bg-neutral-100">-</button>
+                                        <input type="number" id="input-qty" value="1" min="1" max="500" readonly class="w-full text-center text-xs font-bold text-twoink-black focus:outline-none">
+                                        <button type="button" onclick="changeQuantity(1)" class="px-3 py-2 text-xs font-bold hover:bg-neutral-100">+</button>
+                                    </div>
+                                </div>
+
+                                <div id="size-field-wrapper" class="hidden">
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-600 mb-1">Talla Prenda</label>
+                                    <select id="input-size" onchange="updateSummaryDisplay()" class="w-full border border-neutral-300 bg-white px-3 py-2 text-xs font-semibold text-twoink-black focus:outline-none focus:border-twoink-black">
+                                        <option value="CH">Talla CH</option>
+                                        <option value="M" selected>Talla M</option>
+                                        <option value="G">Talla G</option>
+                                        <option value="XG">Talla XG</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-600 mb-1">Tu nombre *</label>
+                                    <input type="text" id="client-name" required value="Fernanda Castillo" placeholder="Tu nombre completo" class="w-full border border-neutral-300 bg-white px-3.5 py-2.5 text-xs text-twoink-black focus:outline-none focus:border-twoink-black">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-600 mb-1">WhatsApp (10 dígitos) *</label>
+                                    <input type="tel" id="client-phone" required value="221 357 3007" placeholder="222 000 0000" class="w-full border border-neutral-300 bg-white px-3.5 py-2.5 text-xs text-twoink-black focus:outline-none focus:border-twoink-black">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-600 mb-1">Correo electrónico (Para enviarte tu código) *</label>
+                                <input type="email" id="client-email" required value="fernanda.c@marca.mx" placeholder="tucorreo@ejemplo.com" class="w-full border border-neutral-300 bg-white px-3.5 py-2.5 text-xs text-twoink-black focus:outline-none focus:border-twoink-black">
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-600 mb-1">Cuéntanos sobre tu proyecto / Fecha de recogida</label>
+                                <textarea id="client-notes" rows="2" placeholder="Indicaciones adicionales sobre tu diseño o horario en que pasas por tu pedido..." class="w-full border border-neutral-300 bg-white px-3.5 py-2 text-xs text-twoink-black focus:outline-none focus:border-twoink-black">Paso a recoger el jueves a las 4:00 PM en Puebla. Pago en efectivo al recibir.</textarea>
+                            </div>
+
+                            <!-- Pay at pickup notice -->
+                            <div class="border-l-2 border-twoink-magenta bg-twoink-grayBg p-3 text-[11px] text-neutral-600 leading-relaxed">
+                                <strong class="text-twoink-black uppercase text-[10px] tracking-wider block">Cero cobros en línea — Pago al recoger:</strong>
+                                Se enviará una copia de este pedido con un <strong>código único</strong> a tu correo y al equipo de Twoink para iniciar producción y cobrar en mostrador.
+                            </div>
+
+                            <button type="submit" class="btn-editorial-primary w-full py-4 mt-2 cursor-pointer">
+                                <span>CONFIRMAR RESERVA Y ENVIAR CORREO</span>
+                                <span>↗</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 01 ¿POR QUÉ ELEGIRNOS? + 04 PREGUNTAS FRECUENTES (Exacto a Capturas 2 y 3) -->
+        <section id="faq-section" class="py-14 sm:py-20 px-4 sm:px-6 bg-white">
+            <div class="max-w-6xl mx-auto space-y-16">
+                
+                <!-- Calidad, creatividad y compromiso -->
+                <div>
+                    <span class="editorial-tag">04 — ¿POR QUÉ ELEGIRNOS?</span>
+                    <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-twoink-black mb-8">
+                        Calidad, creatividad <span class="editorial-italic">y compromiso.</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="border-t border-neutral-200 pt-5">
+                            <div class="text-xl mb-2">🛡️</div>
+                            <h3 class="font-extrabold text-base text-twoink-black">Calidad Premium</h3>
+                            <p class="text-xs text-neutral-500 mt-1 leading-relaxed">Materiales de alta resistencia, colores vibrantes y acabados profesionales en cada prenda o artículo.</p>
+                        </div>
+                        <div class="border-t border-neutral-200 pt-5">
+                            <div class="text-xl mb-2">🕒</div>
+                            <h3 class="font-extrabold text-base text-twoink-black">Entrega puntual</h3>
+                            <p class="text-xs text-neutral-500 mt-1 leading-relaxed">Cumplimos con los tiempos de tu evento o empresa. Con tu código único tu entrega en taller es inmediata.</p>
+                        </div>
+                        <div class="border-t border-neutral-200 pt-5">
+                            <div class="text-xl mb-2">✏️</div>
+                            <h3 class="font-extrabold text-base text-twoink-black">Diseño personalizado</h3>
+                            <p class="text-xs text-neutral-500 mt-1 leading-relaxed">Creamos y revisamos tu archivo antes de estampar para asegurar que luzca exactamente como lo imaginaste.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preguntas Frecuentes Accordion -->
+                <div class="max-w-3xl">
+                    <span class="editorial-tag">05 — PREGUNTAS FRECUENTES</span>
+                    <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-twoink-black mb-6">
+                        Resolvemos <span class="editorial-italic">tus dudas.</span>
+                    </h2>
+                    <div class="divide-y divide-neutral-200 border-t border-b border-neutral-200">
+                        <details class="py-4 group cursor-pointer" open>
+                            <summary class="font-bold text-sm text-twoink-black flex justify-between items-center list-none">
+                                <span>¿Cómo funciona el código único y el pago al recoger?</span>
+                                <span class="text-xs transition group-open:rotate-180">▼</span>
+                            </summary>
+                            <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                                Al diseñar tu producto y confirmar tu reserva, el sistema envía automáticamente un correo electrónico tanto a ti como a nuestro taller con un código único (ej. <strong>TWK-8492</strong>). Con ese código liquidas tu pedido en efectivo o transferencia al recogerlo en Puebla.
+                            </p>
+                        </details>
+                        <details class="py-4 group cursor-pointer">
+                            <summary class="font-bold text-sm text-twoink-black flex justify-between items-center list-none">
+                                <span>¿Cuál es el tiempo de entrega?</span>
+                                <span class="text-xs transition group-open:rotate-180">▼</span>
+                            </summary>
+                            <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                                Pedidos individuales e impresiones de Metro DTF suelen estar listos entre 24 y 48 horas hábiles. Te notificaremos por WhatsApp en cuanto puedas pasar a recogerlo.
+                            </p>
+                        </details>
+                        <details class="py-4 group cursor-pointer">
+                            <summary class="font-bold text-sm text-twoink-black flex justify-between items-center list-none">
+                                <span>¿Tienen cantidad mínima de pedido?</span>
+                                <span class="text-xs transition group-open:rotate-180">▼</span>
+                            </summary>
+                            <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                                ¡No! Puedes personalizar desde 1 pieza (1 taza, 1 playera o 1 metro de DTF) hasta pedidos por mayoreo para empresas y eventos.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MAIN VIEW 2: PANEL DE TALLER TWOINK (RECEPCIÓN Y COBRO)   -->
+    <!-- ========================================================= -->
+    <div id="view-admin" class="flex-grow bg-twoink-grayBg py-12 px-4 sm:px-6 hidden">
+        <div class="max-w-6xl mx-auto space-y-8">
+            
+            <!-- Admin Header -->
+            <div class="bg-white border border-twoink-border p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <span class="editorial-tag">SISTEMA INTERNO TWOINK PUEBLA</span>
+                    <h1 class="text-2xl sm:text-3xl font-black text-twoink-black">
+                        Recepción de Pedidos y <span class="editorial-italic">Cobro en Tienda.</span>
+                    </h1>
+                    <p class="text-xs text-neutral-500 mt-1">
+                        Ingresa el código único que presenta el cliente al llegar a recoger su producto para verificar el monto y registrar el pago.
+                    </p>
+                </div>
+
+                <!-- Search by Unique Code -->
+                <div class="flex items-center gap-2 w-full md:w-80">
+                    <input type="text" id="admin-code-search" oninput="renderWorkshopOrders()" placeholder="Buscar código (ej. TWK-...)" class="w-full border border-twoink-black bg-white px-3.5 py-2.5 text-xs font-mono uppercase text-twoink-black focus:outline-none">
+                    <button onclick="document.getElementById('admin-code-search').value=''; renderWorkshopOrders();" class="btn-editorial-outline py-2.5 px-3">
+                        LIMPIAR
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPIs Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white border border-twoink-border p-5">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">RESERVAS REGISTRADAS</span>
+                    <div id="kpi-total-count" class="text-3xl font-black text-twoink-black mt-1">2</div>
+                </div>
+                <div class="bg-white border border-twoink-border p-5">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">POR COBRAR AL ENTREGAR</span>
+                    <div id="kpi-pending-money" class="text-3xl font-black text-twoink-magenta mt-1">$410 MXN</div>
+                </div>
+                <div class="bg-white border border-twoink-border p-5">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">LIQUIDADOS EN SUCURSAL</span>
+                    <div id="kpi-paid-money" class="text-3xl font-black text-emerald-600 mt-1">$0 MXN</div>
+                </div>
+            </div>
+
+            <!-- Orders Table / Cards -->
+            <div id="workshop-orders-list" class="space-y-4">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MODAL: PASE DE RECOGIDA + SIMULADOR DE CORREOS ENVIADOS   -->
+    <!-- ========================================================= -->
+    <div id="order-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+        <div class="bg-white border border-twoink-black max-w-4xl w-full overflow-hidden shadow-2xl my-auto">
+            
+            <!-- Modal Top Header -->
+            <div class="bg-twoink-black text-white px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="w-6 h-6 bg-twoink-magenta text-white text-xs font-bold flex items-center justify-center">✓</span>
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold uppercase tracking-wider">Reserva Generada y Correos Enviados</h3>
+                        <p class="text-[11px] text-neutral-400">Se ha enviado el código de pago tanto al correo del cliente como al correo de Twoink.</p>
+                    </div>
+                </div>
+                <button onclick="closeOrderModal()" class="text-neutral-400 hover:text-white text-lg px-2">✕</button>
+            </div>
+
+            <!-- Modal Content Grid -->
+            <div class="p-5 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 max-h-[82vh] overflow-y-auto">
+                
+                <!-- Left 5 Cols: Client Pickup Voucher with Unique Code -->
+                <div class="lg:col-span-5 border border-twoink-border bg-twoink-grayBg p-5 flex flex-col justify-between">
+                    <div class="text-center space-y-3">
+                        <span class="editorial-tag">PASE DE PAGO AL RECOGER</span>
+                        <h4 class="text-xs font-semibold text-neutral-500">Presenta este código único en Twoink Puebla:</h4>
+                        
+                        <div class="bg-white border-2 border-twoink-black py-3 px-4 my-2">
+                            <span id="modal-code-display" class="font-mono text-2xl sm:text-3xl font-bold tracking-widest text-twoink-magenta select-all">TWK-8492</span>
+                        </div>
+
+                        <!-- Dynamic QR Code SVG -->
+                        <div class="bg-white p-3 border border-twoink-border inline-block mx-auto">
+                            <svg class="w-24 h-24" viewBox="0 0 100 100">
+                                <rect width="100" height="100" fill="#FFFFFF"/>
+                                <rect x="8" y="8" width="26" height="26" fill="none" stroke="#111111" stroke-width="6"/>
+                                <rect x="15" y="15" width="12" height="12" fill="#D81B60"/>
+                                <rect x="66" y="8" width="26" height="26" fill="none" stroke="#111111" stroke-width="6"/>
+                                <rect x="73" y="15" width="12" height="12" fill="#111111"/>
+                                <rect x="8" y="66" width="26" height="26" fill="none" stroke="#111111" stroke-width="6"/>
+                                <rect x="15" y="73" width="12" height="12" fill="#111111"/>
+                                <path d="M44 12h12v12H44zM44 34h14v12H44zM12 44h22v12H12zM44 54h24v12H44zM74 44h16v22H74zM44 74h16v16H44zM68 72h22v18H68z" fill="#111111"/>
+                            </svg>
+                        </div>
+
+                        <div class="text-left bg-white border border-twoink-border p-3.5 text-xs space-y-1.5 mt-2">
+                            <div class="flex justify-between">
+                                <span class="text-neutral-400">Cliente:</span>
+                                <span id="voucher-client" class="font-bold text-twoink-black">Fernanda Castillo</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-neutral-400">Producto:</span>
+                                <span id="voucher-product" class="font-bold text-twoink-black">Taza Blanca 11oz (x1)</span>
+                            </div>
+                            <div class="flex justify-between border-t border-neutral-100 pt-1.5 mt-1.5">
+                                <span class="font-bold text-twoink-black">Total a pagar al recoger:</span>
+                                <span id="voucher-total" class="font-black text-twoink-magenta text-sm">$80 MXN</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-neutral-200 space-y-2">
+                        <button onclick="openWorkshopWithCode()" class="btn-editorial-primary w-full">
+                            <span>VER EN PANEL TALLER TWOINK</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right 7 Cols: Dual Email Preview (Correo al Cliente vs Correo a Twoink) -->
+                <div class="lg:col-span-7 flex flex-col">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span class="editorial-tag mb-0">DEMOSTRACIÓN DE CORREOS ENVIADOS</span>
+                        <div class="flex border border-twoink-black bg-white">
+                            <button id="btn-mail-client" onclick="renderEmailTab('client')" class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-twoink-black text-white transition">
+                                1. Correo al Cliente
+                            </button>
+                            <button id="btn-mail-twoink" onclick="renderEmailTab('twoink')" class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-white text-twoink-black hover:bg-neutral-100 transition">
+                                2. Correo a Twoink
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Simulated Email Box -->
+                    <div class="border border-neutral-300 bg-white flex-grow flex flex-col">
+                        <div class="bg-twoink-grayBg border-b border-neutral-200 px-4 py-2.5 text-xs space-y-1">
+                            <div class="flex justify-between items-center">
+                                <span id="mail-header-to" class="text-neutral-600"><strong>Para:</strong> fernanda.c@marca.mx</span>
+                                <span class="text-[10px] font-mono uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 font-bold">ENVIADO ✓</span>
+                            </div>
+                            <div id="mail-header-subject" class="font-extrabold text-twoink-black">
+                                Asunto: Confirmación de tu pedido Twoink — Código: #TWK-8492
+                            </div>
+                        </div>
+
+                        <div id="mail-body-preview" class="p-5 text-xs space-y-4 overflow-y-auto max-h-[340px]">
+                            <!-- Injected dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER OFICIAL TWOINK (Exacto a Capturas 1 y 3) -->
+    <footer class="bg-twoink-dark text-white py-12 px-4 sm:px-6 border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            
+            <!-- Brand Info -->
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-white text-twoink-black flex flex-col items-center justify-center font-black">
+                        <span class="text-xs leading-none">2<span class="text-twoink-magenta">.</span></span>
+                        <span class="text-[6px] tracking-widest uppercase">TWOINK</span>
+                    </div>
+                    <span class="font-black tracking-wider text-base">TWOINK</span>
+                </div>
+                <p class="text-sm text-neutral-400 max-w-xs leading-relaxed">
+                    Impresión y personalización de alta calidad. Sublimación, DTF e impresión UV en Puebla.
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div class="md:col-span-3 space-y-2">
+                <h4 class="font-bold text-sm text-white uppercase tracking-wider mb-3">Enlaces</h4>
+                <ul class="space-y-2 text-xs text-neutral-400">
+                    <li><a href="#catalogo-lienzo" onclick="switchMainView('client')" class="hover:text-white transition">Catálogo de Productos</a></li>
+                    <li><a href="#simulador-section" onclick="switchMainView('client')" class="hover:text-white transition">Simulador Personalizado</a></li>
+                    <li><a href="#reserva-section" onclick="switchMainView('client')" class="hover:text-white transition">Reservar con Código</a></li>
+                    <li><button onclick="switchMainView('admin')" class="hover:text-white transition text-left">Acceso Taller Twoink</button></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info from Screenshot 1 -->
+            <div class="md:col-span-4 space-y-2">
+                <h4 class="font-bold text-sm text-white uppercase tracking-wider mb-3">Contacto</h4>
+                <p class="text-sm text-neutral-300 flex items-center gap-2">
+                    <span>📞</span>
+                    <a href="tel:+522213573007" class="hover:text-twoink-magenta transition">+52 221 357 3007</a>
+                </p>
+                <p class="text-sm text-neutral-300 flex items-center gap-2">
+                    <span>📍</span>
+                    <span>Puebla, México</span>
+                </p>
+            </div>
+
+        </div>
+        <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-500 gap-2">
+            <span>© Twoink Sublimación / DTF / UV. Todos los derechos reservados.</span>
+            <span>Sistema de Simulación y Reserva con Pago al Recoger</span>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT ENGINE: SIMULATOR, MOCKUPS, EMAILS & ADMIN     -->
+    <!-- ========================================================= -->
+    <script>
+        // 1. OFFICIAL TWOINK PRODUCT CATALOG (Exact Prices & Specs from Screenshots)
+        const CATALOG = [
+            {
+                id: 'taza',
+                name: 'Taza Blanca 11oz',
+                shortTitle: 'Taza 11oz',
+                price: 80,
+                unitName: 'Piezas',
+                technique: 'SUBLIMACIÓN',
+                hasSize: false,
+                allowColorChange: true,
+                printZone: { width: 130, height: 145, top: '52%', left: '46%' },
+                renderMockup: (hex) => `
+                    <svg viewBox="0 0 300 300" class="w-full h-full drop-shadow-md">
+                        <defs>
+                            <linearGradient id="mugGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#000" stop-opacity="0.12"/>
+                                <stop offset="28%" stop-color="#fff" stop-opacity="0.2"/>
+                                <stop offset="75%" stop-color="#000" stop-opacity="0.03"/>
+                                <stop offset="100%" stop-color="#000" stop-opacity="0.2"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Handle -->
+                        <path d="M210 95 C265 95, 265 215, 210 215" fill="none" stroke="${hex}" stroke-width="22" stroke-linecap="round"/>
+                        <path d="M210 95 C265 95, 265 215, 210 215" fill="none" stroke="#111111" stroke-opacity="0.15" stroke-width="22" stroke-linecap="round"/>
+                        <!-- Body -->
+                        <rect x="65" y="65" width="150" height="180" rx="10" fill="${hex}" stroke="#d4d4d8" stroke-width="2"/>
+                        <rect x="65" y="65" width="150" height="180" rx="10" fill="url(#mugGrad)"/>
+                        <!-- Top Rim -->
+                        <ellipse cx="140" cy="67" rx="75" ry="11" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
+                        <ellipse cx="140" cy="67" rx="68" ry="8" fill="#e4e4e7"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'playera',
+                name: 'Playera (Tacto Algodón)',
+                shortTitle: 'Playera',
+                price: 150,
+                unitName: 'Piezas',
+                technique: 'SUBLIMACIÓN A4 / DTF',
+                hasSize: true,
+                allowColorChange: true,
+                printZone: { width: 125, height: 155, top: '54%', left: '50%' },
+                renderMockup: (hex) => `
+                    <svg viewBox="0 0 300 300" class="w-full h-full drop-shadow-md">
+                        <path d="M95 42 L50 62 L22 118 L62 138 L78 102 L78 260 L222 260 L222 102 L238 138 L278 118 L250 62 L205 42 C188 66, 112 66, 95 42 Z" fill="${hex}" stroke="#a1a1aa" stroke-width="1.8" stroke-linejoin="round"/>
+                        <path d="M100 44 C122 68, 178 68, 200 44" fill="none" stroke="rgba(0,0,0,0.22)" stroke-width="4"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'dtf',
+                name: 'Metro DTF (58 cm)',
+                shortTitle: 'Metro DTF',
+                price: 250,
+                unitName: 'Metros',
+                technique: 'IMPRESIÓN DTF 58CM',
+                hasSize: false,
+                allowColorChange: false,
+                printZone: { width: 195, height: 195, top: '53%', left: '50%' },
+                renderMockup: () => `
+                    <svg viewBox="0 0 300 300" class="w-full h-full">
+                        <!-- DTF Film Roll Sheet 58cm Representation -->
+                        <rect x="38" y="36" width="224" height="234" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+                        <!-- Top Dimension Measurement Bar -->
+                        <line x1="45" y1="22" x2="255" y2="22" stroke="#D81B60" stroke-width="1.5"/>
+                        <polygon points="40,22 48,18 48,26" fill="#D81B60"/>
+                        <polygon points="260,22 252,18 252,26" fill="#D81B60"/>
+                        <text x="150" y="17" text-anchor="middle" fill="#D81B60" font-size="9" font-family="Space Mono" font-weight="bold">ANCHO DE ROLLO: 58 CM</text>
+                        <!-- Subtle Registration Crop Marks -->
+                        <path d="M46 52 L46 44 L54 44 M254 52 L254 44 L246 44 M46 254 L46 262 L54 262 M254 254 L254 262 L246 262" fill="none" stroke="#111111" stroke-width="1.5"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'termo',
+                name: 'Termo Acero Inox 20oz',
+                shortTitle: 'Termo',
+                price: 180,
+                unitName: 'Piezas',
+                technique: 'SUBLIMACIÓN / UV',
+                hasSize: false,
+                allowColorChange: true,
+                printZone: { width: 92, height: 165, top: '54%', left: '50%' },
+                renderMockup: (hex) => `
+                    <svg viewBox="0 0 300 300" class="w-full h-full drop-shadow-md">
+                        <rect x="96" y="34" width="108" height="22" rx="4" fill="#18181b"/>
+                        <path d="M98 56 L202 56 L190 264 L110 264 Z" fill="${hex}" stroke="#a1a1aa" stroke-width="2"/>
+                        <path d="M109 250 L191 250 L190 264 L110 264 Z" fill="#d4d4d8"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'gorra',
+                name: 'Gorra Personalizada',
+                shortTitle: 'Gorra',
+                price: 120,
+                unitName: 'Piezas',
+                technique: 'DTF / PARCHES',
+                hasSize: false,
+                allowColorChange: true,
+                printZone: { width: 118, height: 80, top: '44%', left: '50%' },
+                renderMockup: (hex) => `
+                    <svg viewBox="0 0 300 300" class="w-full h-full drop-shadow-md">
+                        <path d="M60 170 C55 75, 245 75, 240 170 Z" fill="${hex}" stroke="#a1a1aa" stroke-width="2"/>
+                        <path d="M88 165 C88 96, 212 96, 212 165 Z" fill="#ffffff" stroke="#e4e4e7" stroke-width="1"/>
+                        <path d="M48 168 C100 155, 200 155, 252 168 C275 212, 25 212, 48 168 Z" fill="${hex}" stroke="#71717a" stroke-width="2"/>
+                        <circle cx="150" cy="82" r="5" fill="#111111"/>
+                    </svg>
+                `
+            }
+        ];
+
+        // 2. DEMO STICKER GRAPHICS
+        const STICKERS = {
+            brand: {
+                name: 'Emblema Twoink Studio',
+                svg: `<svg viewBox="0 0 120 120" class="w-full h-full">
+                    <rect x="14" y="14" width="92" height="92" fill="#111111"/>
+                    <text x="60" y="68" text-anchor="middle" fill="#FFFFFF" font-family="Inter" font-weight="900" font-size="36">2<tspan fill="#D81B60">.</tspan></text>
+                    <text x="60" y="92" text-anchor="middle" fill="#FFFFFF" font-family="Space Mono" font-weight="700" font-size="10" letter-spacing="3">TWOINK</text>
+                </svg>`
+            },
+            puebla: {
+                name: 'Gráfico Creativo Puebla',
+                svg: `<svg viewBox="0 0 120 120" class="w-full h-full">
+                    <circle cx="60" cy="60" r="48" fill="none" stroke="#111111" stroke-width="4"/>
+                    <circle cx="60" cy="60" r="40" fill="none" stroke="#D81B60" stroke-width="2" stroke-dasharray="5 3"/>
+                    <polygon points="60,26 70,48 94,50 75,66 80,90 60,77 40,90 45,66 26,50 50,48" fill="#D81B60"/>
+                </svg>`
+            },
+            coffee: {
+                name: 'Logo Cafetería Artesanal',
+                svg: `<svg viewBox="0 0 120 120" class="w-full h-full">
+                    <rect x="16" y="24" width="88" height="72" fill="none" stroke="#111111" stroke-width="4"/>
+                    <path d="M40 50 L72 50 L68 78 C66 84, 46 84, 44 78 Z" fill="#111111"/>
+                    <path d="M72 55 C82 55, 82 70, 70 70" fill="none" stroke="#111111" stroke-width="4"/>
+                    <path d="M50 42 Q48 34 54 30 M62 42 Q60 34 66 30" fill="none" stroke="#D81B60" stroke-width="3" stroke-linecap="round"/>
+                </svg>`
+            },
+            event: {
+                name: 'Diseño Evento VIP',
+                svg: `<svg viewBox="0 0 120 120" class="w-full h-full">
+                    <polygon points="60,12 106,38 106,82 60,108 14,82 14,38" fill="#D81B60"/>
+                    <path d="M36 74 L44 46 L60 62 L76 46 L84 74 Z" fill="#FFFFFF"/>
+                </svg>`
+            }
+        };
+
+        // 3. APPLICATION STATE
+        let appState = {
+            product: CATALOG[0],
+            colorHex: '#FFFFFF',
+            colorName: 'Blanco',
+            graphicType: 'sticker', // 'sticker' | 'upload'
+            stickerKey: 'brand',
+            uploadedUrl: null,
+            customText: 'TWOINK STUDIO',
+            customFont: "'Inter', sans-serif",
+            customTextColor: '#111111',
+            x: 0,
+            y: 0,
+            scale: 100,
+            rotate: 0,
+            quantity: 1,
+            size: 'M',
+            latestOrder: null,
+            orders: [
+                {
+                    code: 'TWK-9042',
+                    createdAt: 'Hoy, 12:15 PM',
+                    clientName: 'Carlos Mendoza',
+                    clientPhone: '222 489 1023',
+                    clientEmail: 'carlos@estudio.mx',
+                    productName: 'Playera (Tacto Algodón)',
+                    technique: 'SUBLIMACIÓN A4 / DTF',
+                    colorName: 'Blanco',
+                    size: 'G',
+                    quantity: 2,
+                    total: 300,
+                    notes: 'Paso mañana a las 5pm a recoger.',
+                    designSummary: 'Emblema Twoink Studio + Texto "ESTUDIO MX"',
+                    status: 'pendiente'
+                },
+                {
+                    code: 'TWK-3185',
+                    createdAt: 'Hoy, 02:30 PM',
+                    clientName: 'Andrea Morales',
+                    clientPhone: '221 908 4412',
+                    clientEmail: 'andrea.m@eventos.com',
+                    productName: 'Metro DTF (58 cm)',
+                    technique: 'IMPRESIÓN DTF 58CM',
+                    colorName: 'Film Transparente',
+                    size: 'N/A',
+                    quantity: 1,
+                    total: 250,
+                    notes: 'Logos listos para planchar, urgente.',
+                    designSummary: 'Archivo PNG subido por cliente',
+                    status: 'pendiente'
+                }
+            ]
+        };
+
+        // 4. INITIALIZE ON LOAD
+        window.onload = function() {
+            renderSimulatorTabs();
+            selectProduct('taza');
+            applyDemoSticker('brand');
+            syncCustomText();
+            initCanvasDragging();
+            renderWorkshopOrders();
+        };
+
+        // 5. PRODUCT SELECTION & SCROLL
+        function selectProductAndScroll(productId) {
+            selectProduct(productId);
+            document.getElementById('simulador-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderSimulatorTabs() {
+            const container = document.getElementById('simulator-product-tabs');
+            container.innerHTML = CATALOG.map(prod => {
+                const active = prod.id === appState.product.id;
+                return `
+                    <button type="button" onclick="selectProduct('${prod.id}')" class="p-2.5 text-left border transition ${active ? 'border-twoink-black bg-twoink-black text-white' : 'border-twoink-border bg-white text-twoink-black hover:border-neutral-400'}">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[11px] font-extrabold truncate">${prod.shortTitle}</span>
+                            <span class="text-[11px] font-mono font-bold ${active ? 'text-twoink-magenta' : 'text-twoink-magenta'}">$${prod.price}</span>
+                        </div>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function selectProduct(productId) {
+            const found = CATALOG.find(item => item.id === productId);
+            if (!found) return;
+            appState.product = found;
+
+            // Default white for Ceramic Mug if dark color was active
+            if (found.id === 'dtf') {
+                appState.colorName = 'Film 58cm';
+            }
+
+            renderSimulatorTabs();
+            renderProductMockup();
+
+            // Configure Print Zone dimensions
+            const printZone = document.getElementById('print-zone');
+            printZone.style.width = found.printZone.width + 'px';
+            printZone.style.height = found.printZone.height + 'px';
+            printZone.style.top = found.printZone.top;
+            printZone.style.left = found.printZone.left;
+
+            if (found.id === 'dtf') {
+                printZone.classList.add('dtf-grid-bg');
+            } else {
+                printZone.classList.remove('dtf-grid-bg');
+            }
+
+            // Update Canvas Labels
+            document.getElementById('canvas-product-label').innerText = `LIENZO: ${found.name.toUpperCase()}`;
+            document.getElementById('canvas-price-tag').innerText = `$${found.price} MXN`;
+            document.getElementById('sim-technique-badge').innerText = `TÉCNICA: ${found.technique}`;
+            document.getElementById('qty-field-label').innerText = `Cantidad (${found.unitName})`;
+
+            // Toggle Size Selector
+            const sizeWrapper = document.getElementById('size-field-wrapper');
+            if (found.hasSize) {
+                sizeWrapper.classList.remove('hidden');
+            } else {
+                sizeWrapper.classList.add('hidden');
+            }
+
+            // Toggle Color Picker visibility
+            const colorContainer = document.getElementById('color-picker-container');
+            colorContainer.style.opacity = found.allowColorChange ? '1' : '0.35';
+            colorContainer.style.pointerEvents = found.allowColorChange ? 'auto' : 'none';
+
+            resetDesignPosition();
+            updateSummaryDisplay();
+        }
+
+        function renderProductMockup() {
+            const stage = document.getElementById('product-svg-stage');
+            stage.innerHTML = appState.product.renderMockup(appState.colorHex);
+        }
+
+        function changeProductColor(hex, name) {
+            appState.colorHex = hex;
+            appState.colorName = name;
+            renderProductMockup();
+            updateSummaryDisplay();
+
+            // Update swatch border highlight
+            const buttons = document.querySelectorAll('#color-swatches-list button');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('title') === name) {
+                    btn.className = `w-6 h-6 border-2 border-twoink-magenta scale-110 transition`;
+                    btn.style.backgroundColor = hex;
+                } else {
+                    btn.className = `w-6 h-6 border border-neutral-300 hover:scale-110 transition`;
+                    btn.style.backgroundColor = btn.getAttribute('onclick').split("'")[1];
+                }
+            });
+        }
+
+        // 6. GRAPHIC UPLOAD, STICKERS & CUSTOM TEXT
+        function applyDemoSticker(key) {
+            appState.graphicType = 'sticker';
+            appState.stickerKey = key;
+
+            const imgEl = document.getElementById('user-img-preview');
+            const svgEl = document.getElementById('user-svg-preview');
+
+            imgEl.classList.add('hidden');
+            svgEl.classList.remove('hidden');
+            svgEl.innerHTML = STICKERS[key].svg;
+            document.getElementById('uploaded-file-label').innerText = 'Subir imagen propia (PNG, JPG)...';
+        }
+
+        function handleUserImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                appState.graphicType = 'upload';
+                appState.uploadedUrl = e.target.result;
+
+                const imgEl = document.getElementById('user-img-preview');
+                const svgEl = document.getElementById('user-svg-preview');
+
+                svgEl.classList.add('hidden');
+                imgEl.src = appState.uploadedUrl;
+                imgEl.classList.remove('hidden');
+                document.getElementById('uploaded-file-label').innerText = file.name;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function syncCustomText() {
+            const textVal = document.getElementById('input-custom-text').value;
+            const fontVal = document.getElementById('select-custom-font').value;
+
+            appState.customText = textVal;
+            appState.customFont = fontVal;
+
+            const previewText = document.getElementById('user-text-preview');
+            previewText.innerText = textVal;
+            previewText.style.fontFamily = fontVal;
+            previewText.style.color = appState.customTextColor;
+        }
+
+        function changeTextColor(hex) {
+            appState.customTextColor = hex;
+            syncCustomText();
+        }
+
+        // 7. TRANSFORM & DRAG ENGINE
+        function handleTransformSliders() {
+            appState.scale = parseInt(document.getElementById('slider-scale').value);
+            appState.rotate = parseInt(document.getElementById('slider-rotate').value);
+
+            document.getElementById('scale-label').innerText = `${appState.scale}%`;
+            document.getElementById('rotate-label').innerText = `${appState.rotate}°`;
+            document.getElementById('transform-readout').innerText = `Escala: ${appState.scale}% | Giro: ${appState.rotate}°`;
+
+            updateDraggableTransform();
+        }
+
+        function updateDraggableTransform() {
+            const layer = document.getElementById('draggable-layer');
+            const s = appState.scale / 100;
+            layer.style.transform = `translate(${appState.x}px, ${appState.y}px) scale(${s}) rotate(${appState.rotate}deg)`;
+        }
+
+        function resetDesignPosition() {
+            appState.x = 0;
+            appState.y = 0;
+            appState.scale = 100;
+            appState.rotate = 0;
+            document.getElementById('slider-scale').value = 100;
+            document.getElementById('slider-rotate').value = 0;
+            document.getElementById('scale-label').innerText = '100%';
+            document.getElementById('rotate-label').innerText = '0°';
+            document.getElementById('transform-readout').innerText = 'Escala: 100% | Giro: 0°';
+            updateDraggableTransform();
+        }
+
+        function initCanvasDragging() {
+            const layer = document.getElementById('draggable-layer');
+            const zone = document.getElementById('print-zone');
+            let dragging = false;
+            let startX = 0, startY = 0;
+
+            const startDrag = (cx, cy) => {
+                dragging = true;
+                startX = cx - appState.x;
+                startY = cy - appState.y;
+                zone.classList.add('dragging');
+            };
+
+            const moveDrag = (cx, cy) => {
+                if (!dragging) return;
+                appState.x = Math.max(-85, Math.min(85, cx - startX));
+                appState.y = Math.max(-85, Math.min(85, cy - startY));
+                updateDraggableTransform();
+            };
+
+            const stopDrag = () => {
+                dragging = false;
+                zone.classList.remove('dragging');
+            };
+
+            layer.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                startDrag(e.clientX, e.clientY);
+            });
+            window.addEventListener('mousemove', (e) => moveDrag(e.clientX, e.clientY));
+            window.addEventListener('mouseup', stopDrag);
+
+            layer.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) startDrag(e.touches[0].clientX, e.touches[0].clientY);
+            }, { passive: true });
+            window.addEventListener('touchmove', (e) => {
+                if (dragging && e.touches.length === 1) moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+            }, { passive: true });
+            window.addEventListener('touchend', stopDrag);
+        }
+
+        // 8. RESERVATION & UNIQUE ORDER CODE GENERATOR
+        function changeQuantity(delta) {
+            const input = document.getElementById('input-qty');
+            let next = parseInt(input.value || 1) + delta;
+            if (next < 1) next = 1;
+            input.value = next;
+            appState.quantity = next;
+            updateSummaryDisplay();
+        }
+
+        function updateSummaryDisplay() {
+            const total = appState.product.price * appState.quantity;
+            const sizeInfo = appState.product.hasSize ? ` • Talla ${document.getElementById('input-size').value}` : '';
+
+            document.getElementById('summary-name').innerText = appState.product.name;
+            document.getElementById('summary-specs').innerText = `Color: ${appState.colorName}${sizeInfo} • Cant: ${appState.quantity}`;
+            document.getElementById('summary-total').innerText = `$${total} MXN`;
+            document.getElementById('summary-unit').innerText = `$${appState.product.price} MXN c/u`;
+        }
+
+        function createUniqueOrderCode() {
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            return `TWK-${randomNum}`;
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+
+            const code = createUniqueOrderCode();
+            const total = appState.product.price * appState.quantity;
+            const sizeVal = appState.product.hasSize ? document.getElementById('input-size').value : 'Estándar';
+            const graphicDesc = (appState.graphicType === 'upload' ? 'Imagen subida por el cliente' : STICKERS[appState.stickerKey].name) +
+                                (appState.customText ? ` + Texto "${appState.customText}"` : '');
+
+            const orderObj = {
+                code: code,
+                createdAt: 'Hace un momento',
+                clientName: document.getElementById('client-name').value.trim(),
+                clientPhone: document.getElementById('client-phone').value.trim(),
+                clientEmail: document.getElementById('client-email').value.trim(),
+                productName: appState.product.name,
+                technique: appState.product.technique,
+                colorName: appState.colorName,
+                size: sizeVal,
+                quantity: appState.quantity,
+                total: total,
+                notes: document.getElementById('client-notes').value.trim() || 'Recogida en sucursal Puebla',
+                designSummary: graphicDesc,
+                status: 'pendiente'
+            };
+
+            appState.latestOrder = orderObj;
+            appState.orders.unshift(orderObj);
+            renderWorkshopOrders();
+
+            // Populate Voucher Modal
+            document.getElementById('modal-code-display').innerText = orderObj.code;
+            document.getElementById('voucher-client').innerText = orderObj.clientName;
+            document.getElementById('voucher-product').innerText = `${orderObj.productName} (x${orderObj.quantity})`;
+            document.getElementById('voucher-total').innerText = `$${orderObj.total} MXN`;
+
+            // Show Client Email Preview first
+            renderEmailTab('client');
+
+            const modal = document.getElementById('order-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 9. EMAIL SIMULATOR TABS (CLIENT EMAIL & TWOINK EMAIL)
+        function renderEmailTab(target) {
+            const order = appState.latestOrder;
+            if (!order) return;
+
+            const btnClient = document.getElementById('btn-mail-client');
+            const btnTwoink = document.getElementById('btn-mail-twoink');
+            const toLine = document.getElementById('mail-header-to');
+            const subjectLine = document.getElementById('mail-header-subject');
+            const bodyBox = document.getElementById('mail-body-preview');
+
+            if (target === 'client') {
+                btnClient.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-twoink-black text-white transition';
+                btnTwoink.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-white text-twoink-black hover:bg-neutral-100 transition';
+
+                toLine.innerHTML = `<strong>Para:</strong> ${order.clientEmail} (Cliente)`;
+                subjectLine.innerText = `Asunto: Tu pedido en Twoink está confirmado — Código de recogida: #${order.code}`;
+                bodyBox.innerHTML = `
+                    <div class="border-b border-neutral-200 pb-3 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 bg-twoink-black text-white font-black text-xs flex items-center justify-center">2.</span>
+                            <span class="font-black text-sm tracking-wider">TWOINK PUEBLA</span>
+                        </div>
+                        <span class="font-mono text-xs text-neutral-500">ORDEN #${order.code}</span>
+                    </div>
+                    <p>Hola <strong>${order.clientName}</strong>,</p>
+                    <p>Hemos recibido el diseño de tu producto en nuestro taller. No necesitas hacer ningún pago en línea; liquidas el total al momento de recoger tu pedido.</p>
+                    <div class="border-2 border-twoink-black bg-twoink-grayBg p-4 text-center my-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 block">CÓDIGO ÚNICO PARA PAGO Y RECOGIDA</span>
+                        <span class="font-mono text-2xl font-bold text-twoink-magenta tracking-widest block mt-1">${order.code}</span>
+                        <span class="text-xs font-extrabold text-twoink-black mt-1 block">Monto a pagar en sucursal: $${order.total} MXN</span>
+                    </div>
+                    <div class="border border-neutral-200 p-3 bg-white space-y-1 text-xs">
+                        <div><strong>Producto:</strong> ${order.productName} (${order.colorName})</div>
+                        <div><strong>Cantidad / Talla:</strong> ${order.quantity} unidad(es) • Talla: ${order.size}</div>
+                        <div><strong>Diseño configurado:</strong> ${order.designSummary}</div>
+                        <div><strong>Notas:</strong> ${order.notes}</div>
+                    </div>
+                    <div class="text-[11px] text-neutral-500 pt-2 border-t border-neutral-200">
+                        📍 <strong>Ubicación:</strong> Puebla, México | 📞 <strong>WhatsApp Taller:</strong> +52 221 357 3007
+                    </div>
+                `;
+            } else {
+                btnTwoink.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-twoink-magenta text-white transition';
+                btnClient.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-white text-twoink-black hover:bg-neutral-100 transition';
+
+                toLine.innerHTML = `<strong>Para:</strong> pedidos@twoink.mx (Recepción y Taller Twoink)`;
+                subjectLine.innerText = `Asunto: [NUEVA RESERVA #${order.code}] ${order.productName} x${order.quantity} — ${order.clientName}`;
+                bodyBox.innerHTML = `
+                    <div class="bg-twoink-black text-white p-3 flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-twoink-magenta">ORDEN DE PRODUCCIÓN INTERNA</span>
+                        <span class="font-mono font-bold text-xs">${order.code}</span>
+                    </div>
+                    <p>Se ha registrado una nueva reserva desde el <strong>Simulador Web Twoink</strong> con modalidad de <strong>Pago al Recoger en Tienda</strong>.</p>
+                    <div class="grid grid-cols-2 gap-2 bg-twoink-grayBg p-3 border border-neutral-200 text-xs">
+                        <div><strong>Cliente:</strong> ${order.clientName}</div>
+                        <div><strong>WhatsApp:</strong> ${order.clientPhone}</div>
+                        <div><strong>Correo:</strong> ${order.clientEmail}</div>
+                        <div><strong>Cobrar al entregar:</strong> <span class="font-black text-twoink-magenta">$${order.total} MXN</span></div>
+                    </div>
+                    <div class="border border-neutral-300 p-3 space-y-1 text-xs">
+                        <div class="font-extrabold uppercase text-[10px] tracking-wider text-neutral-500">Ficha Técnica para Taller:</div>
+                        <div>• <strong>Lienzo:</strong> ${order.productName} (${order.technique})</div>
+                        <div>• <strong>Color / Talla / Cant:</strong> ${order.colorName} | Talla: ${order.size} | Cant: ${order.quantity}</div>
+                        <div>• <strong>Arte del cliente:</strong> ${order.designSummary} (Escala: ${appState.scale}%, Giro: ${appState.rotate}°)</div>
+                        <div>• <strong>Notas del cliente:</strong> "${order.notes}"</div>
+                    </div>
+                `;
+            }
+        }
+
+        function closeOrderModal() {
+            const modal = document.getElementById('order-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openWorkshopWithCode() {
+            const code = appState.latestOrder ? appState.latestOrder.code : '';
+            closeOrderModal();
+            switchMainView('admin');
+            document.getElementById('admin-code-search').value = code;
+            renderWorkshopOrders();
+        }
+
+        // 10. VIEW SWITCHER & WORKSHOP PANEL (ADMIN)
+        function switchMainView(mode) {
+            const viewClient = document.getElementById('view-client');
+            const viewAdmin = document.getElementById('view-admin');
+            const navLinks = document.getElementById('client-nav-links');
+            const btnClient = document.getElementById('header-btn-client');
+            const btnAdmin = document.getElementById('header-btn-admin');
+
+            if (mode === 'client') {
+                viewClient.classList.remove('hidden');
+                viewAdmin.classList.add('hidden');
+                navLinks.classList.remove(' md:hidden');
+                btnClient.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-twoink-black bg-twoink-black text-white transition';
+                btnAdmin.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-neutral-300 bg-white text-twoink-black hover:border-twoink-black transition flex items-center gap-1.5';
+            } else {
+                viewClient.classList.add('hidden');
+                viewAdmin.classList.remove('hidden');
+                btnAdmin.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-twoink-black bg-twoink-black text-white transition flex items-center gap-1.5';
+                btnClient.className = 'px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-neutral-300 bg-white text-twoink-black hover:border-twoink-black transition';
+                renderWorkshopOrders();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function renderWorkshopOrders() {
+            const listEl = document.getElementById('workshop-orders-list');
+            const query = (document.getElementById('admin-code-search')?.value || '').trim().toUpperCase();
+
+            const pendingList = appState.orders.filter(o => o.status === 'pendiente');
+            const paidList = appState.orders.filter(o => o.status === 'entregado');
+
+            const pendingSum = pendingList.reduce((sum, o) => sum + o.total, 0);
+            const paidSum = paidList.reduce((sum, o) => sum + o.total, 0);
+
+            document.getElementById('badge-orders-count').innerText = pendingList.length;
+            document.getElementById('top-admin-count').innerText = pendingList.length;
+            document.getElementById('kpi-total-count').innerText = appState.orders.length;
+            document.getElementById('kpi-pending-money').innerText = `$${pendingSum} MXN`;
+            document.getElementById('kpi-paid-money').innerText = `$${paidSum} MXN`;
+
+            const filtered = appState.orders.filter(o =>
+                o.code.toUpperCase().includes(query) ||
+                o.clientName.toUpperCase().includes(query)
+            );
+
+            if (filtered.length === 0) {
+                listEl.innerHTML = `
+                    <div class="bg-white border border-twoink-border p-10 text-center text-neutral-500 text-xs">
+                        No se encontraron pedidos con el código o nombre <strong>"${query}"</strong>.
+                    </div>
+                `;
+                return;
+            }
+
+            listEl.innerHTML = filtered.map(order => {
+                const isPaid = order.status === 'entregado';
+                return `
+                    <div class="bg-white border ${isPaid ? 'border-neutral-200 opacity-75' : 'border-twoink-black'} p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+                        <div class="space-y-2">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="font-mono text-sm font-bold px-3 py-1 bg-twoink-black text-white">${order.code}</span>
+                                <span class="font-extrabold text-base text-twoink-black">${order.clientName}</span>
+                                <span class="text-xs text-neutral-500">📞 ${order.clientPhone}</span>
+                                <span class="text-xs text-neutral-400">• ${order.createdAt}</span>
+                                ${isPaid
+                                    ? `<span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-0.5">PAGADO Y ENTREGADO ✓</span>`
+                                    : `<span class="text-[10px] font-bold uppercase tracking-wider bg-pink-100 text-twoink-magenta px-2.5 py-0.5">PENDIENTE DE PAGO EN TIENDA</span>`
+                                }
+                            </div>
+                            <div class="text-xs text-neutral-600 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1 pt-1">
+                                <div><strong>Producto:</strong> ${order.productName} (${order.colorName}) — Cant: <strong>${order.quantity}</strong> (Talla: ${order.size})</div>
+                                <div><strong>Diseño:</strong> <span class="text-twoink-magenta font-semibold">${order.designSummary}</span></div>
+                                <div class="sm:col-span-2 text-neutral-500"><strong>Notas del cliente:</strong> "${order.notes}"</div>
+                            </div>
+                        </div>
+
+                        <div class="flex sm:flex-row items-center justify-between lg:justify-end gap-5 border-t lg:border-t-0 border-neutral-200 pt-4 lg:pt-0">
+                            <div class="text-left lg:text-right">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-neutral-400 block">MONTO A COBRAR</span>
+                                <span class="text-2xl font-black ${isPaid ? 'text-neutral-400 line-through' : 'text-twoink-magenta'}">$${order.total} MXN</span>
+                            </div>
+
+                            ${!isPaid ? `
+                                <button onclick="markOrderDelivered('${order.code}')" class="btn-editorial-primary">
+                                    <span>COBRAR Y ENTREGAR</span>
+                                    <span>↗</span>
+                                </button>
+                            ` : `
+                                <span class="text-[10px] font-bold uppercase tracking-wider border border-emerald-600 text-emerald-700 px-3 py-2">
+                                    LIQUIDADO EN SUCURSAL
+                                </span>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function markOrderDelivered(code) {
+            const target = appState.orders.find(o => o.code === code);
+            if (target) {
+                target.status = 'entregado';
+                renderWorkshopOrders();
+            }
+        }
+    </script>
+</body>
+</html>
